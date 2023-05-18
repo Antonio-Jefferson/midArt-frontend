@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { MdEmail } from 'react-icons/md'
+import { FaKey } from 'react-icons/fa'
 
 export const metadata = {
   title: 'MidArt - Signin',
@@ -38,26 +40,32 @@ export default function Signin() {
             nossa comunidade!
           </p>
           <form className=" flex flex-col justify-center items-center w-96 h-2/5">
-            <input
-              className="w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5"
-              type="email"
-              placeholder="email"
-            />
-            <input
-              className="w-96 h-14 bg-gray-200 p-1 border rounded-md mb-12"
-              type="password"
-              placeholder="senha"
-            />
+            <div className="flex justify-center items-center w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5">
+              <MdEmail className="text-gray-500 text-1xl" />
+              <input
+                className="bg-gray-200 ml-2 w-80 h-14 rounded-md outline-none"
+                type="email"
+                placeholder="email"
+              />
+            </div>
+            <div className="flex justify-center items-center w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5">
+              <FaKey className="text-gray-500 text-1xl" />
+              <input
+                className="bg-gray-200 ml-2 w-80 h-14 rounded-md outline-none"
+                type="password"
+                placeholder="senha"
+              />
+            </div>
             <button
-              className="bg-primary p-1 text-green-50 rounded w-60 h-12 hover:bg-secondary font-semibold"
+              className="bg-primary p-1 text-green-50 rounded w-60 h-12 hover:bg-secondary font-semibold mt-8"
               type="submit"
             >
               ENTRAR
             </button>
             <p className="lg:hidden mt-3 text-zinc-500">
-              Não possue conta?,
+              Não possue conta?
               <span className="font-semibold text-secondary hover:cursor-pointer hover:underline ml-1">
-                <Link href={'/signup'}>CADASTRE-SE</Link>
+                <Link href={'/sign-up'}>CADASTRE-SE</Link>
               </span>
             </p>
           </form>
