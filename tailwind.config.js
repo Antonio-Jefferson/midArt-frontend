@@ -8,9 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '500px', // >= 500px
+        md: '760px', // >= 750px
+        lg: '1000px', // >= 1000px
+        xl: '1280px', // >= 1280px
+        '2xl': '1536px', // >= 1536px
+      },
       colors: {
-        primary: '#3366FF',
-        secondary: '#FF9900',
+        primary: '#01000c',
+        secondary: '#cc670a',
         gray: {
           100: '#F4F4F4',
           200: '#D4D4D4',
