@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Signup() {
   return (
-    <main className="flex justify-between  bg-slate-50 h-screen">
+    <main className="flex justify-between  bg-slate-50 h-screen overflow-hidden">
       <div className="w-1/2 bg-secondary hidden lg:block">
         <div className="flex flex-col justify-center my-64 items-center">
           <h1 className="text-center font-bold text-blue-50 text-4xl my-5">
@@ -29,12 +29,12 @@ export default function Signup() {
           </Link>
         </div>
       </div>
-      <div className="w-1/2 flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center px-40">
+      <div className="w-1/2 flex items-center justify-center px-3">
+        <div className="flex flex-col items-center justify-center ">
           <h1 className="text-center font-bold text-secondary text-3xl m-5">
             CRIE SUA CONTA
           </h1>
-          <p className="text-zinc-500 font-light text-lg text-center mb-10">
+          <p className="text-zinc-500 font-light text-lg text-center mb-10 w-96">
             Deixe sua criatividade fluir e conecte-se com outros artistas na
             nossa comunidade. Cadastre-se agora e comece a compartilhar sua
             arte!
