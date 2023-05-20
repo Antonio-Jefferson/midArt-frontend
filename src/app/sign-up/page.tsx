@@ -10,82 +10,64 @@ export const metadata = {
 
 export default function Signup() {
   return (
-    <main className="flex justify-between  bg-slate-50 h-screen overflow-hidden">
-      <div className="w-1/2 bg-secondary hidden lg:block">
-        <div className="flex flex-col justify-center my-64 items-center">
-          <h1 className="text-center font-bold text-blue-50 text-4xl my-5">
-            SEJA BEM-VINDO
-          </h1>
-          <p className="text-zinc-200 font-light text-2xl px-40">
-            Olá, seja bem-vindo! Estamos animados para ter você em nossa
-            comunidade de artistas. Entre com sua conta para descobrir e
-            compartilhar inspiração, desafiar seus limites e fazer novas
-            conexões na sua jornada criativa.
-          </p>
-          <Link href={'/'}>
-            <button className="w-60 h-14 bg-transparent border-2 border-white rounded-2xl text-white font-semibold px-4 py-2 mt-10 m-auto hover:bg-white hover:bg-opacity-10">
-              FAZER LOGIN
-            </button>
-          </Link>
-        </div>
-      </div>
-      <div className="w-1/2 flex items-center justify-center px-3">
-        <div className="flex flex-col items-center justify-center ">
-          <h1 className="text-center font-bold text-secondary text-3xl m-5">
+    <main className="flex h-screen">
+      <div className="flex flex-col h-screen w-full lg:w-1/2 bg-gray-50 items-center justify-center">
+        <div className="flex flex-col w-3/5 items-center">
+          <h1 className="text-center font-bold text-primary text-3xl mb-8">
             CRIE SUA CONTA
           </h1>
-          <p className="text-zinc-500 font-light text-lg text-center mb-10 w-96">
+          <p className="text-zinc-500 font-light text-lg text-center mb-10">
             Deixe sua criatividade fluir e conecte-se com outros artistas na
             nossa comunidade. Cadastre-se agora e comece a compartilhar sua
             arte!
           </p>
-          <form className=" flex flex-col justify-center items-center w-96 h-2/5">
-            <div className="flex justify-center items-center w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5">
-              <BsFillPersonFill className="text-gray-500 text-1xl" />
+          <form className=" flex flex-col gap-4 justify-center items-center w-96 h-2/5 mt-10">
+            <div className="relative">
+              <BsFillPersonFill className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="bg-gray-200 ml-2 w-80 h-14 rounded-md outline-none"
+                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
                 type="text"
-                placeholder="nome"
+                placeholder="name"
               />
             </div>
-            <div className="flex justify-center items-center w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5">
-              <MdEmail className="text-gray-500 text-1xl" />
+            <div className="relative">
+              <MdEmail className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="bg-gray-200 ml-2 w-80 h-14 rounded-md outline-none"
+                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
                 type="email"
                 placeholder="email"
               />
             </div>
-            <div className="flex justify-center items-center w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5">
-              <FaKey className="text-gray-500 text-1xl" />
+            <div className="relative">
+              <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="bg-gray-200 ml-2 w-80 h-14 rounded-md outline-none"
+                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="senha"
               />
             </div>
-            <div className="flex justify-center items-center w-96 h-14 bg-gray-200 p-2 border rounded-md mb-5">
-              <FaKey className="text-gray-500 text-1xl" />
+            <div className="relative">
+              <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="bg-gray-200 ml-2 w-80 h-14 rounded-md outline-none"
+                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="confirmar senha"
               />
             </div>
             <button
-              className="bg-secondary p-1 text-green-50 rounded w-60 h-12 hover:bg-primary font-semibold mt-8"
+              className="bg-primary text-green-50 rounded w-60 h-12 hover:bg-secondary font-semibold mt-8 py-4"
               type="submit"
             >
-              CADASTRAR
+              ENTRAR
             </button>
             <p className="lg:hidden mt-3 text-zinc-500">
               Não possue conta?
-              <span className="font-semibold text-primary hover:cursor-pointer hover:underline ml-1">
+              <span className="font-semibold text-secondary hover:cursor-pointer hover:underline ml-1">
                 <Link href={'/'}>FAÇA LOGIN</Link>
               </span>
             </p>
           </form>
-          <div className="flex gap-5 mt-10">
+          <div className="flex gap-5 mt-20">
             <Image
               src="/images/google.png"
               width={40}
@@ -99,6 +81,24 @@ export default function Signup() {
               alt="facebook"
             />
           </div>
+        </div>
+      </div>
+      <div className="flex-col h-screen w-1/2 justify-center items-center hidden lg:flex">
+        <div className="flex w-3/5 flex-col items-center p-3">
+          <h1 className="text-center font-bold text-blue-50 text-4xl mb-10">
+            SEJA BEM-VINDO
+          </h1>
+          <p className="text-zinc-200 font-light text-2xl">
+            Olá, seja bem-vindo! Estamos animados para ter você em nossa
+            comunidade de artistas. Entre com sua conta para descobrir e
+            compartilhar inspiração, desafiar seus limites e fazer novas
+            conexões na sua jornada criativa.
+          </p>
+          <Link href={'/sign-up'}>
+            <button className="w-60 h-14 bg-transparent border-2 border-white rounded-2xl text-white font-semibold px-4 py-2 mt-10 m-auto hover:bg-white hover:bg-opacity-10">
+              FAZER LOGIN
+            </button>
+          </Link>
         </div>
       </div>
     </main>
