@@ -25,7 +25,7 @@ export default function Signup() {
             <div className="relative">
               <BsFillPersonFill className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
+                className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="text"
                 placeholder="name"
               />
@@ -33,7 +33,7 @@ export default function Signup() {
             <div className="relative">
               <MdEmail className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
+                className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="email"
                 placeholder="email"
               />
@@ -41,7 +41,7 @@ export default function Signup() {
             <div className="relative">
               <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
+                className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="senha"
               />
@@ -49,7 +49,7 @@ export default function Signup() {
             <div className="relative">
               <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
+                className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="confirmar senha"
               />
@@ -94,7 +94,7 @@ export default function Signup() {
             compartilhar inspiração, desafiar seus limites e fazer novas
             conexões na sua jornada criativa.
           </p>
-          <Link href={'/sign-up'}>
+          <Link href={'/'}>
             <button className="w-60 h-14 bg-transparent border-2 border-white rounded-2xl text-white font-semibold px-4 py-2 mt-10 m-auto hover:bg-white hover:bg-opacity-10">
               FAZER LOGIN
             </button>

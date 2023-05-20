@@ -43,7 +43,7 @@ export default function Signin() {
             <div className="relative">
               <MdEmail className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
+                className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="email"
                 placeholder="email"
               />
@@ -51,7 +51,7 @@ export default function Signin() {
             <div className="relative">
               <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
-                className="w-96 h-14 pl-8 border bg-gray-50 rounded-md outline-none"
+                className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="senha"
               />
