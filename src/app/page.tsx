@@ -2,12 +2,30 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 import { FaKey } from 'react-icons/fa'
+import { stringify } from 'querystring'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const metadata = {
   title: 'MidArt - Signin',
 }
 
 export default function Signin() {
+  const url = process.env.GOOGLE_URI
+
+  const params = {
+    redirect_uri: process.env.REDIRECT_RUI,
+    client_id: process.env.CLIENT_ID,
+    access_type: process.env.PROCCESS_TYPE,
+    response_type: process.env.RESPONSE_TYPE,
+    propt: process.env.PROPT,
+    scope: process.env.SCOPE,
+  }
+
+  const query = stringify(params)
+
+  // function redirectToFacebook(){}
+
   return (
     <main className="flex h-screen">
       <div className="flex-col h-screen w-1/2 justify-center items-center bg-secondary hidden lg:flex">
@@ -70,18 +88,22 @@ export default function Signin() {
             </p>
           </form>
           <div className="flex gap-5 mt-10">
-            <Image
-              src="/images/google.png"
-              width={40}
-              height={40}
-              alt="google"
-            />
-            <Image
-              src="/images/facebook.png"
-              width={40}
-              height={40}
-              alt="facebook"
-            />
+            <Link href={`${url}?${query}`}>
+              <Image
+                src="/images/google.png"
+                width={40}
+                height={40}
+                alt="google"
+              />
+            </Link>
+            <div>
+              <Image
+                src="/images/facebook.png"
+                width={40}
+                height={40}
+                alt="facebook"
+              />
+            </div>
           </div>
         </div>
       </div>
