@@ -1,30 +1,35 @@
-import Image from 'next/image'
+'use client'
+
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 import { FaKey } from 'react-icons/fa'
+import Image from 'next/image'
 import { stringify } from 'querystring'
-import dotenv from 'dotenv'
-dotenv.config()
+import { useSearchParams } from 'next/navigation'
 
-export const metadata = {
-  title: 'MidArt - Signin',
-}
+export default async function Signin() {
+  function loginGoogle() {
+    const url = process.env.NEXT_PUBLIC_GOOGLE_URI
 
-export default function Signin() {
-  const url = process.env.GOOGLE_URI
+    const params = {
+      redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI,
+      client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
+      access_type: process.env.NEXT_PUBLIC_ACCESS_TYPE,
+      response_type: process.env.NEXT_PUBLIC_RESPONSE_TYPE,
+      propt: process.env.NEXT_PUBLIC_PROPT,
+      scope: process.env.NEXT_PUBLIC_SCOPE,
+    }
 
-  const params = {
-    redirect_uri: process.env.REDIRECT_RUI,
-    client_id: process.env.CLIENT_ID,
-    access_type: process.env.PROCCESS_TYPE,
-    response_type: process.env.RESPONSE_TYPE,
-    propt: process.env.PROPT,
-    scope: process.env.SCOPE,
+    const query = stringify(params)
+    return `${url}?${query}`
   }
 
-  const query = stringify(params)
+  const searchParams = useSearchParams()
+  const code = searchParams.get('code')
 
-  // function redirectToFacebook(){}
+  if (code) {
+    console.log('Valor do parâmetro "code":', code)
+  }
 
   return (
     <main className="flex h-screen">
@@ -87,24 +92,22 @@ export default function Signin() {
               </span>
             </p>
           </form>
-          <div className="flex gap-5 mt-10">
-            <Link href={`${url}?${query}`}>
-              <Image
-                src="/images/google.png"
-                width={40}
-                height={40}
-                alt="google"
-              />
-            </Link>
-            <div>
-              <Image
-                src="/images/facebook.png"
-                width={40}
-                height={40}
-                alt="facebook"
-              />
-            </div>
-          </div>
+        </div>
+        <div className="flex gap-5 mt-10">
+          <Link href={loginGoogle()}>
+            <Image
+              src="/images/google.png"
+              width={40}
+              height={40}
+              alt="google"
+            />
+          </Link>
+          <Image
+            src="/images/facebook.png"
+            width={40}
+            height={40}
+            alt="facebook"
+          />
         </div>
       </div>
     </main>
