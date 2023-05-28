@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 import { FaKey } from 'react-icons/fa'
+import GoogleSignIn from '@/components/googleSingIn'
 
-export default function Signin() {
+export default async function Signin() {
   return (
     <main className="flex h-screen">
       <div className="flex-col h-screen w-1/2 justify-center items-center bg-secondary hidden lg:flex">
@@ -65,6 +66,7 @@ export default function Signin() {
             </p>
           </form>
         </div>
+        <GoogleSignIn/>
       </div>
     </main>
   )

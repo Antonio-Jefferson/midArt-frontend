@@ -1,8 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 import { FaKey } from 'react-icons/fa'
+import Image from 'next/image'
+import { stringify } from 'querystring'
+import { useSearchParams } from 'next/navigation'
+import axios from 'axios'
 
-export default function Signin() {
+export default async function Signin() {
+  
   return (
     <main className="flex h-screen">
       <div className="flex-col h-screen w-1/2 justify-center items-center bg-secondary hidden lg:flex">
@@ -64,6 +71,22 @@ export default function Signin() {
               </span>
             </p>
           </form>
+        </div>
+        <div className="flex gap-5 mt-10">
+          <Link href={loginGoogle()}>
+            <Image
+              src="/images/google.png"
+              width={40}
+              height={40}
+              alt="google"
+            />
+          </Link>
+          <Image
+            src="/images/facebook.png"
+            width={40}
+            height={40}
+            alt="facebook"
+          />
         </div>
       </div>
     </main>
