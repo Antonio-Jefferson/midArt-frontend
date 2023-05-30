@@ -1,18 +1,41 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 import { FaKey } from 'react-icons/fa'
 import { BsFillPersonFill } from 'react-icons/bs'
+import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { createUserSchema } from '@/@types/signupTypes'
+import { signUp } from '@/server/userApi'
 
-export const metadata = {
-  title: 'MidArt - Signup',
-}
+import { z } from 'zod'
 
 export default function Signup() {
+  const router = useRouter()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<z.infer<typeof createUserSchema>>({
+    resolver: zodResolver(createUserSchema),
+  })
+
+  async function createUser(data: z.infer<typeof createUserSchema>) {
+    try {
+      await signUp(data.username, data.email, data.password)
+      router.push('/')
+    } catch (err) {
+      alert('ERROR')
+    }
+  }
+
   return (
     <main className="flex h-screen">
       <div className="flex flex-col h-screen w-full lg:w-1/2 bg-gray-50 items-center justify-center">
-        <div className="flex flex-col w-3/5 items-center">
+        <div className="flex flex-col w-3/5 items-center mt-5">
           <h1 className="text-center font-bold text-primary text-3xl mb-8">
             CRIE SUA CONTA
           </h1>
@@ -21,14 +44,21 @@ export default function Signup() {
             nossa comunidade. Cadastre-se agora e comece a compartilhar sua
             arte!
           </p>
-          <form className=" flex flex-col gap-4 justify-center items-center w-96 h-2/5 mt-10">
+          <form
+            onSubmit={handleSubmit(createUser)}
+            className=" flex flex-col gap-4 justify-center items-center w-96 h-2/5 mt-16"
+          >
             <div className="relative">
               <BsFillPersonFill className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
                 className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="text"
                 placeholder="name"
+                {...register('username')}
               />
+              {errors.password && (
+                <p className="text-red-600 p-1">{errors.username?.message}</p>
+              )}
             </div>
             <div className="relative">
               <MdEmail className="absolute top-5 left-4 text-gray-500 text-1xl" />
@@ -36,7 +66,11 @@ export default function Signup() {
                 className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="email"
                 placeholder="email"
+                {...register('email')}
               />
+              {errors.email && (
+                <p className="text-red-600 p-1">{errors.email?.message}</p>
+              )}
             </div>
             <div className="relative">
               <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
@@ -44,7 +78,11 @@ export default function Signup() {
                 className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="senha"
+                {...register('password')}
               />
+              {errors.password && (
+                <p className="text-red-600 p-1">{errors.password?.message}</p>
+              )}
             </div>
             <div className="relative">
               <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
@@ -52,15 +90,21 @@ export default function Signup() {
                 className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="confirmar senha"
+                {...register('confirmPassword')}
               />
+              {errors.confirmPassword && (
+                <p className="text-red-600 p-1">
+                  {errors.confirmPassword?.message}
+                </p>
+              )}
             </div>
             <button
-              className="bg-primary text-green-50 rounded w-60 h-12 hover:bg-secondary font-semibold mt-8 py-4"
+              className="bg-primary text-green-50 rounded w-60 h-12 hover:bg-secondary font-semibold mt-8 mb-5 py-4"
               type="submit"
             >
               ENTRAR
             </button>
-            <p className="lg:hidden mt-3 text-zinc-500">
+            <p className="lg:hidden mt-3 mb-5 text-zinc-500">
               Não possue conta?
               <span className="font-semibold text-secondary hover:cursor-pointer hover:underline ml-1">
                 <Link href={'/'}>FAÇA LOGIN</Link>
