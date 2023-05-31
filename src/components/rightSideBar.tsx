@@ -1,3 +1,3 @@
 export default function RightSideBar() {
-  return <h1>Em breve</h1>
+  return <div className="w-1/3 bg-orange-950">Right</div>
 }
