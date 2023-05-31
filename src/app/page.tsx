@@ -1,8 +1,35 @@
+'use client'
+
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
 import { FaKey } from 'react-icons/fa'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { loginUserSchema } from '@/@types/siginType'
+import { z } from 'zod'
+import { singIn } from '@/server/userApi'
+import { useRouter } from 'next/navigation'
 
 export default function Signin() {
+  const route = useRouter()
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<z.infer<typeof loginUserSchema>>({
+    resolver: zodResolver(loginUserSchema),
+  })
+
+  const loginUser = async (data: z.infer<typeof loginUserSchema>) => {
+    try {
+      const response = await singIn(data.email, data.password)
+      if (response) route.push('/dashboard/home')
+    } catch (err) {
+      alert('ERRO')
+    }
+  }
+
   return (
     <main className="flex h-screen">
       <div className="flex-col h-screen w-1/2 justify-center items-center bg-secondary hidden lg:flex">
@@ -34,14 +61,21 @@ export default function Signin() {
             se esqueça de verificar as notificações para ver as novidades da
             nossa comunidade!
           </p>
-          <form className=" flex flex-col gap-4 justify-center items-center w-96 h-2/5 mt-10">
+          <form
+            onSubmit={handleSubmit(loginUser)}
+            className=" flex flex-col gap-4 justify-center items-center w-96 h-2/5 mt-10"
+          >
             <div className="relative">
               <MdEmail className="absolute top-5 left-4 text-gray-500 text-1xl" />
               <input
                 className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="email"
                 placeholder="email"
+                {...register('email')}
               />
+              {errors.email && (
+                <p className="text-red-600 p-1">{errors.email?.message}</p>
+              )}
             </div>
             <div className="relative">
               <FaKey className="absolute top-5 left-4 text-gray-500 text-1xl" />
@@ -49,7 +83,11 @@ export default function Signin() {
                 className="w-96 h-14 pl-10 border bg-gray-50 rounded-md outline-none"
                 type="password"
                 placeholder="senha"
+                {...register('password')}
               />
+              {errors.password && (
+                <p className="text-red-600 p-1">{errors.password?.message}</p>
+              )}
             </div>
             <button
               className="bg-secondary text-green-50 rounded w-60 h-12 hover:bg-primary font-semibold mt-8 py-4"

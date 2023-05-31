@@ -15,3 +15,15 @@ export async function signUp(
   )
   return response.data
 }
+
+export async function singIn(email: string, password: string) {
+  console.log({ email, password })
+  const response = await api.post(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/users/signin`,
+    {
+      email,
+      password,
+    },
+  )
+  return response
+}
