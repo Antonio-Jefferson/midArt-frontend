@@ -9,9 +9,18 @@ import { loginUserSchema } from '@/@types/siginType'
 import { z } from 'zod'
 import { singIn } from '@/server/userApi'
 import { useRouter } from 'next/navigation'
+import { cookies } from '@/functions/cookies'
+import { useEffect } from 'react'
+import { parseCookies } from 'nookies'
 
 export default function Signin() {
   const route = useRouter()
+
+  useEffect(() => {
+    const cookies = parseCookies()
+    const token = cookies.token
+    if (token) route.push('/dashboard/home')
+  }, [])
 
   const {
     register,
@@ -24,6 +33,7 @@ export default function Signin() {
   const loginUser = async (data: z.infer<typeof loginUserSchema>) => {
     try {
       const response = await singIn(data.email, data.password)
+      await cookies(response)
       if (response) route.push('/dashboard/home')
     } catch (err) {
       alert('ERRO')

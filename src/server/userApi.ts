@@ -25,5 +25,5 @@ export async function singIn(email: string, password: string) {
       password,
     },
   )
-  return response
+  return response.data
 }

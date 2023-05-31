@@ -8,3 +8,10 @@ export const loginUserSchema = z.object({
     .toLowerCase(),
   password: z.string().nonempty('Campo obrigatório'),
 })
+
+export type dataCookies = {
+  token: string
+  userId: string
+  userImage: string
+  username: string
+}
