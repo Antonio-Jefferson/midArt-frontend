@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>MidArt</title>
       </Head>
-      <body className="bg-primary">
+      <body>
         <div className="h-screen w-screen flex">
           <LeftSideBar />
           {children}

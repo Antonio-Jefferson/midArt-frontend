@@ -9,7 +9,7 @@ import { FiLogOut } from 'react-icons/fi'
 
 export default function LeftSideBar() {
   return (
-    <div className="w-1/3 h-screen p-5">
+    <div className="w-1/3 h-screen p-5 fixed left-0 bg-primary">
       <div className="flex items-center">
         <div className="flex gap-2 mr-14">
           <div className="w-7 h-7 rounded-full bg-pink-600"></div>
