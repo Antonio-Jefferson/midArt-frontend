@@ -12,8 +12,8 @@ module.exports = {
         sm: '500px', // >= 500px
         md: '760px', // >= 750px
         lg: '1000px', // >= 1000px
-        xl: '1280px', // >= 1280px
-        '2xl': '1536px', // >= 1536px
+        xl: '1400px', // >= 1400px
+        '2xl': '1550px', // >= 1550px
       },
       colors: {
         primary: '#01000c',

@@ -3,7 +3,7 @@ import CardPopular from './cardPopular'
 import CardGroupe from './cardGroup'
 export default function RightSideBar() {
   return (
-    <div className="flex flex-col gap-8 w-1/3 h-screen fixed right-0 bg-primary pt-5 pl-10">
+    <div className="hidden flex-col gap-8 w-[400px] h-screen fixed right-0 bg-primary pt-5 pl-5 xl:flex 2xl:right-20">
       <div className="flex gap-1 items-center w-80 h-10 p-2 rounded-3xl relative">
         <input
           className="w-80 h-10 rounded-3xl pl-2 bg-gray-850 outline-none"

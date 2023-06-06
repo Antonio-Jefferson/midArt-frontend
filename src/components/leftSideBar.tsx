@@ -9,7 +9,7 @@ import { FiLogOut } from 'react-icons/fi'
 
 export default function LeftSideBar() {
   return (
-    <div className="w-1/3 h-screen p-5 fixed left-0 bg-primary">
+    <div className="hidden w-[400px] flex-col fixed h-screen p-5 left-1 bg-primary 2xl:flex 2xl:left-20">
       <div className="flex items-center">
         <div className="flex gap-2 mr-14">
           <div className="w-7 h-7 rounded-full bg-pink-600"></div>
@@ -21,26 +21,26 @@ export default function LeftSideBar() {
           <FaPenNib fontSize={20} color="#cc670a" />
         </div>
       </div>
-      <div className="ml-32 mt-8 flex-col justify-between items-center">
+      <div className="mt-8 flex-col justify-between items-center">
         <ul className="flex-col">
           <li className="flex gap-4 items-center mb-10">
-            <HiHome fontSize={40} color="#cc670a" />
+            <HiHome fontSize={35} color="#cc670a" />
             <h3 className="text-secondary font-bold text-xl">Página inicial</h3>
           </li>
           <li className="flex gap-4 items-center mb-10">
-            <FaBell fontSize={40} color="#d9d9d9" />
+            <FaBell fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Notificações</h3>
           </li>
           <li className="flex gap-4 items-center mb-10">
-            <BsFillBookmarkFill fontSize={40} color="#d9d9d9" />
+            <BsFillBookmarkFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Favoritos</h3>
           </li>
           <li className="flex gap-4 items-center mb-10">
-            <BsFillTicketPerforatedFill fontSize={40} color="#d9d9d9" />
+            <BsFillTicketPerforatedFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Eventos</h3>
           </li>
           <li className="flex gap-4 items-center mb-10">
-            <BsFillPersonFill fontSize={40} color="#d9d9d9" />
+            <BsFillPersonFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Perfil</h3>
           </li>
         </ul>

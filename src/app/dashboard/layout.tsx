@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 import Head from 'next/head'
 import LeftSideBar from '@/components/leftSideBar'
 import RightSideBar from '@/components/rightSideBar'
+import MenuSideBar from '@/components/menuSideBar'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -13,8 +14,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>MidArt</title>
       </Head>
-      <body>
-        <div className="h-screen w-screen flex">
+      <body className="bg-primary">
+        <div className="flex bg-primary">
+          <MenuSideBar />
           <LeftSideBar />
           {children}
           <RightSideBar />
