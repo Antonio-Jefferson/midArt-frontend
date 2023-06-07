@@ -5,6 +5,7 @@ import Head from 'next/head'
 import LeftSideBar from '@/components/leftSideBar'
 import RightSideBar from '@/components/rightSideBar'
 import MenuSideBar from '@/components/menuSideBar'
+import MenuMobile from '@/components/menuMobile'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <LeftSideBar />
           {children}
           <RightSideBar />
+          <MenuMobile />
         </div>
       </body>
     </html>
