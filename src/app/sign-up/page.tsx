@@ -35,11 +35,11 @@ export default function Signup() {
   return (
     <main className="flex h-screen">
       <div className="flex flex-col h-screen w-full lg:w-1/2 bg-gray-50 items-center justify-center">
-        <div className="flex flex-col w-3/5 items-center mt-5">
+        <div className="flex flex-col lg:w-3/5 w-full justify-center items-center mt-5">
           <h1 className="text-center font-bold text-primary text-3xl mb-8">
             CRIE SUA CONTA
           </h1>
-          <p className="text-zinc-500 font-light text-lg text-center mb-10">
+          <p className="text-zinc-500 font-light text-lg text-center mb-10 lg:w-full lg:p-4">
             Deixe sua criatividade fluir e conecte-se com outros artistas na
             nossa comunidade. Cadastre-se agora e comece a compartilhar sua
             arte!
