@@ -1,6 +1,6 @@
 import { IoSearchSharp } from 'react-icons/io5'
-import CardPopular from './cardPopular'
-import CardGroupe from './cardGroup'
+import CardGroupe from './components/cardGroup'
+import CardPopular from './components/cardPopular'
 export default function RightSideBar() {
   return (
     <div className="hidden flex-col gap-8 w-[400px] h-screen fixed right-0 bg-primary pt-5 pl-5 xl:flex 2xl:right-20">

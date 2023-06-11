@@ -1,10 +1,10 @@
 import { BsSend } from 'react-icons/bs'
-import CardUserComment from './cardUserComment'
+import CardUserComment from './components/cardUserComment'
 
 export default function CardComment() {
   return (
     <div className="h-80 bg-gray-900 relative">
-      <ul className="w-full h-80 p-3 overflow-y-scroll pb-12">
+      <ul className="w-full h-80 p-3 overflow-y-auto pb-12">
         <CardUserComment />
         <CardUserComment />
         <CardUserComment />

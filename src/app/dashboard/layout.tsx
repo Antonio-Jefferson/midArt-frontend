@@ -2,10 +2,10 @@ import '../globals.css'
 
 import { ReactNode } from 'react'
 import Head from 'next/head'
-import LeftSideBar from '@/components/leftSideBar'
-import RightSideBar from '@/components/rightSideBar'
-import MenuSideBar from '@/components/menuSideBar'
-import MenuMobile from '@/components/menuMobile'
+import LeftSideBar from '@/components/Home/LeftMenu'
+import RightSideBar from '@/components/Home/RightMenu'
+import MenuSideBar from '@/components/Home/menuSideBar'
+import MenuMobile from '@/components/Home/menuMobile'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
