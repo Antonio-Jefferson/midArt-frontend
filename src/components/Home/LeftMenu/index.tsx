@@ -5,7 +5,7 @@ import {
   BsFillTicketPerforatedFill,
   BsFillPersonFill,
 } from 'react-icons/bs'
-import { FiLogOut } from 'react-icons/fi'
+import LogOut from './components/logout'
 
 export default function LeftSideBar() {
   return (
@@ -53,13 +53,7 @@ export default function LeftSideBar() {
               Novo Post
             </button>
           </div>
-          <div className="flex justify-between items-center w-96 mt-24">
-            <div className="flex gap-3 items-center">
-              <div className="w-12 h-12 rounded-full bg-slate-600"></div>
-              <p className="text-gray-200 font-bold">Name User</p>
-            </div>
-            <FiLogOut fontSize={30} color="#d9d9d9" />
-          </div>
+          <LogOut />
         </div>
       </div>
     </div>

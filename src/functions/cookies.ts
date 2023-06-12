@@ -2,7 +2,6 @@ import { dataCookies } from '@/@types/siginType'
 import { setCookie } from 'nookies'
 
 export const cookies = async (data: dataCookies) => {
-  console.log(data)
   const cookiesToSet = {
     token: data.token,
     userId: data.userId,

@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { createUserSchema } from '@/@types/signupTypes'
-import { signUp } from '@/server/userApi'
+import { signUp } from '@/server/loginApi'
 
 import { z } from 'zod'
 

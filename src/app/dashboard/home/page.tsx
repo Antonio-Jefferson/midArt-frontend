@@ -1,4 +1,4 @@
-import CardPost from '@/components/cardPost'
+import List from '@/components/Home/Posts'
 
 export default function HomePage() {
   return (
@@ -10,11 +10,7 @@ export default function HomePage() {
           <p className="font-bold text-gray-100 text-lg">Desafios</p>
         </div>
       </div>
-      <ul className="mb-8 mt-8">
-        <CardPost />
-        <CardPost />
-        <CardPost />
-      </ul>
+      <List />
     </div>
   )
 }
