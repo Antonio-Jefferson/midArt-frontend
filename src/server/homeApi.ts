@@ -2,7 +2,7 @@ import { configType } from '@/@types/homeTypes'
 import api from './api'
 
 export async function findFeddData(config: configType) {
-  const response = await api.post(
+  const response = await api.get(
     `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/drawings/feed`,
     config,
   )

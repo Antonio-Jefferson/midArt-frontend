@@ -9,7 +9,7 @@ import { loginUserSchema } from '@/@types/siginType'
 import { z } from 'zod'
 import { singIn } from '@/server/loginApi'
 import { useRouter } from 'next/navigation'
-import { cookies } from '@/functions/cookies'
+import { cookies } from '@/utils/cookies'
 import { useEffect } from 'react'
 import { parseCookies } from 'nookies'
 

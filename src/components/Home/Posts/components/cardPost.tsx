@@ -1,11 +1,15 @@
+'use client'
+
 import { AiOutlineHeart } from 'react-icons/ai'
 import { FaRegComment } from 'react-icons/fa'
 import { BsBookmark } from 'react-icons/bs'
 import CardComment from '../../Comments'
 import { DrawingType } from '@/@types/homeTypes'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function CardPost(props: DrawingType) {
+  const [readComment, setReadComment] = useState<boolean>(false)
   return (
     <li>
       <div className="border border-gray-800 p-3">
@@ -16,6 +20,12 @@ export default function CardPost(props: DrawingType) {
               width={56}
               height={56}
               alt="user image"
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+                borderRadius: '50%',
+              }}
             />
           </div>
           <div>
@@ -33,7 +43,10 @@ export default function CardPost(props: DrawingType) {
               <AiOutlineHeart fontSize={24} color="#d9d9d9" />
               <p className="text-gray-300">{props.likes_count}</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div
+              className="flex flex-col items-center"
+              onClick={() => setReadComment(!readComment)}
+            >
               <FaRegComment fontSize={24} color="#d9d9d9" />
               <p className="text-gray-300">{props.comments_count}</p>
             </div>
@@ -48,11 +61,17 @@ export default function CardPost(props: DrawingType) {
               width={100}
               height={288}
               alt="desenho"
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+                borderRadius: '6px',
+              }}
             />
           </div>
         </div>
       </div>
-      <CardComment />
+      {readComment ? <CardComment /> : ''}
     </li>
   )
 }
