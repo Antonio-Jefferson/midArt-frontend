@@ -1,14 +1,18 @@
 import { parseCookies } from 'nookies'
 
-const findCookis = () => {
+const findCookies = () => {
   const cookies = parseCookies()
+  const token = cookies.token
   const userImage = cookies.userImage
+  const userId = cookies.userId
   const username = cookies.username
 
   return {
+    token,
     userImage,
     username,
+    userId,
   }
 }
 
-export default findCookis
+export default findCookies

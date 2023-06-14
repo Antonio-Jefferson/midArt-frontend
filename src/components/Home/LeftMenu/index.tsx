@@ -5,6 +5,7 @@ import {
   BsFillTicketPerforatedFill,
   BsFillPersonFill,
 } from 'react-icons/bs'
+import Link from 'next/link'
 import LogOut from './components/logout'
 
 export default function LeftSideBar() {
@@ -23,26 +24,41 @@ export default function LeftSideBar() {
       </div>
       <div className="mt-8 flex-col justify-between items-center">
         <ul className="flex-col">
-          <li className="flex gap-4 items-center mb-10">
+          <Link
+            className="flex gap-4 items-center mb-10"
+            href="/dashboard/home"
+          >
             <HiHome fontSize={35} color="#cc670a" />
             <h3 className="text-secondary font-bold text-xl">Página inicial</h3>
-          </li>
-          <li className="flex gap-4 items-center mb-10">
+          </Link>
+          <Link
+            className="flex gap-4 items-center mb-10"
+            href="/dashboard/notifications"
+          >
             <FaBell fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Notificações</h3>
-          </li>
-          <li className="flex gap-4 items-center mb-10">
+          </Link>
+          <Link
+            className="flex gap-4 items-center mb-10"
+            href="/dashboard/favorites"
+          >
             <BsFillBookmarkFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Favoritos</h3>
-          </li>
-          <li className="flex gap-4 items-center mb-10">
+          </Link>
+          <Link
+            className="flex gap-4 items-center mb-10"
+            href="/dashboard/events"
+          >
             <BsFillTicketPerforatedFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Eventos</h3>
-          </li>
-          <li className="flex gap-4 items-center mb-10">
+          </Link>
+          <Link
+            className="flex gap-4 items-center mb-10"
+            href={`/dashboard/profile/1`}
+          >
             <BsFillPersonFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Perfil</h3>
-          </li>
+          </Link>
         </ul>
         <div className="flex flex-col justify-center items-center mt-56">
           <div className="flex flex-col gap-5">

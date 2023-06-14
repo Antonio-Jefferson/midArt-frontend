@@ -21,7 +21,6 @@ export default function List() {
     try {
       const data = await findFeddData(config)
       setPostData(data)
-      console.log(data)
     } catch (error) {
       alert(error)
     }

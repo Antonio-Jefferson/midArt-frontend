@@ -16,3 +16,15 @@ export type configType = {
     Authorization: string
   }
 }
+
+export type FamousType = {
+  id: number
+  username: string
+  profile_image: string
+}
+
+export type GroupsType = {
+  id: number
+  group_image: string
+  group_name: string
+}

@@ -10,6 +10,7 @@ import { useState } from 'react'
 
 export default function CardPost(props: DrawingType) {
   const [readComment, setReadComment] = useState<boolean>(false)
+  console.log(props)
   return (
     <li>
       <div className="border border-gray-800 p-3">
