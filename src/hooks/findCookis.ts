@@ -6,7 +6,7 @@ const findCookies = () => {
   const userImage = cookies.userImage
   const userId = cookies.userId
   const username = cookies.username
-
+  console.log(userId)
   return {
     token,
     userImage,
