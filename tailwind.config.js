@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         primary: '#01000c',
         secondary: '#cc670a',
+        colorButton: '#E82265',
         gray: {
           100: '#F4F4F4',
           200: '#D9D9D9',

@@ -4,13 +4,32 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { FaRegComment } from 'react-icons/fa'
 import { BsBookmark } from 'react-icons/bs'
 import CardComment from '../../Comments'
-import { DrawingType } from '@/@types/homeTypes'
+import { CommentType, DrawingType } from '@/@types/homeTypes'
 import Image from 'next/image'
 import { useState } from 'react'
+import { parseCookies } from 'nookies'
+import { findCommentsDataApi } from '@/server/homeApi'
 
 export default function CardPost(props: DrawingType) {
   const [readComment, setReadComment] = useState<boolean>(false)
-  console.log(props)
+  const [commentsData, setCommentsData] = useState<CommentType[]>([])
+
+  const findComments = async (id: number) => {
+    try {
+      const cookies = parseCookies()
+      const token = cookies.token
+      const data = await findCommentsDataApi(token, id)
+      const dataComments = {
+        ...data,
+        drawId: props.id,
+      }
+      setCommentsData(dataComments)
+      setReadComment(!readComment)
+    } catch (error) {
+      alert(error)
+    }
+  }
+
   return (
     <li>
       <div className="border border-gray-800 p-3">
@@ -46,7 +65,7 @@ export default function CardPost(props: DrawingType) {
             </div>
             <div
               className="flex flex-col items-center"
-              onClick={() => setReadComment(!readComment)}
+              onClick={() => findComments(props.id)}
             >
               <FaRegComment fontSize={24} color="#d9d9d9" />
               <p className="text-gray-300">{props.comments_count}</p>
@@ -72,7 +91,7 @@ export default function CardPost(props: DrawingType) {
           </div>
         </div>
       </div>
-      {readComment ? <CardComment /> : ''}
+      {readComment ? <CardComment commentsData={commentsData} /> : ''}
     </li>
   )
 }

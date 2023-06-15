@@ -28,3 +28,13 @@ export type GroupsType = {
   group_image: string
   group_name: string
 }
+
+export type CommentType = {
+  id: number
+  user_id: number
+  drawing_id: number
+  username: string
+  image_user: string
+  comment_text: string
+  created_at: Date
+}
