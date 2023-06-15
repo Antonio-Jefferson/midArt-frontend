@@ -2,7 +2,7 @@ import './globals.css'
 
 import { ReactNode } from 'react'
 import Head from 'next/head'
-import PostModal from '@/components/modals/PostModal'
+import AddUserGroupModal from '@/components/modals/AddUserGroupModal'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body className="bg-black">
-        <PostModal />
+        <AddUserGroupModal />
         {children}
       </body>
     </html>
