@@ -2,7 +2,6 @@ import './globals.css'
 
 import { ReactNode } from 'react'
 import Head from 'next/head'
-import EditUserModal from '@/components/modals/editUserModal'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -11,10 +10,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <body className="bg-black">
-        <EditUserModal />
-        {children}
-      </body>
+      <body className="bg-black">{children}</body>
     </html>
   )
 }

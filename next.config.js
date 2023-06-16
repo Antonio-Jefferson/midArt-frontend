@@ -9,6 +9,7 @@ const nextConfig = {
       'ocaminhodaarte.com',
       'i.ytimg.com',
       'i0.wp.com',
+      'cdn.dribbble.com',
     ],
   },
 }

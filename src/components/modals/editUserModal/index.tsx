@@ -14,7 +14,7 @@ export default function EditUserModal() {
           </div>
           <div className="absolute w-40 h-40 rounded-full bg-gray-400 top-36 left-14">
             <label className="absolute top-12 left-14" htmlFor="image-user">
-              <FaUserEdit fontSize={60} color="#acacac" />
+              <FaUserEdit fontSize={60} color="#757575" />
             </label>
             <input className="invisible" type="file" name="image-user" />
           </div>
