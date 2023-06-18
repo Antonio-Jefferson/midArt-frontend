@@ -74,3 +74,55 @@ export async function postComments(
   console.log(response.data)
   return response.data
 }
+
+export async function postLiked(token: string, drawId: number) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const response = await api.post(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/likes/${drawId}`,
+    config,
+  )
+  return response.data
+}
+
+export async function postDislike(token: string, drawId: number) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const response = await api.post(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/likes/${drawId}/dislike`,
+    config,
+  )
+  return response.data
+}
+
+export async function postFavorite(token: string, drawId: number) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const response = await api.post(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/favorites/${drawId}`,
+    config,
+  )
+  return response.data
+}
+
+export async function deleteFavorite(token: string, drawId: number) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const response = await api.post(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/favorites/delete/${drawId}`,
+    config,
+  )
+  return response.data
+}
