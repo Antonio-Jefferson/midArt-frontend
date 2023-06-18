@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation'
 import { cookies } from '@/utils/cookies'
 import { useEffect } from 'react'
 import { parseCookies } from 'nookies'
+import { toast } from 'react-toastify'
 
 export default function Signin() {
   const route = useRouter()
@@ -20,7 +21,7 @@ export default function Signin() {
     const cookies = parseCookies()
     const token = cookies.token
     if (token) route.push('/dashboard/home')
-  }, [])
+  })
 
   const {
     register,
@@ -36,7 +37,8 @@ export default function Signin() {
       await cookies(response)
       if (response) route.push('/dashboard/home')
     } catch (err) {
-      alert('ERRO')
+      toast('Não foi possível fazer o LOGIN')
+      alert(err)
     }
   }
 

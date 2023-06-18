@@ -12,6 +12,7 @@ import { createUserSchema } from '@/@types/signupTypes'
 import { signUp } from '@/server/loginApi'
 
 import { z } from 'zod'
+import { toast } from 'react-toastify'
 
 export default function Signup() {
   const router = useRouter()
@@ -26,9 +27,10 @@ export default function Signup() {
   async function createUser(data: z.infer<typeof createUserSchema>) {
     try {
       await signUp(data.username, data.email, data.password)
+      toast('CADASTRO feito com sucesso')
       router.push('/')
     } catch (err) {
-      alert('ERROR')
+      toast('Não foi possível fazer o CADASTRO')
     }
   }
 
