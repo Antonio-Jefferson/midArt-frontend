@@ -144,6 +144,7 @@ export async function postFollower(token: string, followed: number) {
   return response.data
 }
 
+/*
 export async function unfollower(token: string, followed: number) {
   const config = {
     headers: {
@@ -160,3 +161,4 @@ export async function unfollower(token: string, followed: number) {
   )
   return response.data
 }
+*/
