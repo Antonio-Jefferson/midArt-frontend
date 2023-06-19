@@ -120,8 +120,42 @@ export async function deleteFavorite(token: string, drawId: number) {
       Authorization: `Bearer ${token}`,
     },
   }
-  const response = await api.post(
+  const response = await api.delete(
     `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/favorites/delete/${drawId}`,
+    config,
+  )
+  return response.data
+}
+
+export async function postFollower(token: string, followed: number) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const body = {
+    followed,
+  }
+  const response = await api.post(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/followers`,
+    body,
+    config,
+  )
+  return response.data
+}
+
+export async function unfollower(token: string, followed: number) {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const body = {
+    followed,
+  }
+  const response = await api.delete(
+    `${process.env.NEXT_PUBLIC_REACT_APP_API_BASE_URL}/followers`,
+    body,
     config,
   )
   return response.data

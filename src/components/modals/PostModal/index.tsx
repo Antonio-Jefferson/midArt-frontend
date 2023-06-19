@@ -1,6 +1,11 @@
 import { BsFillImageFill } from 'react-icons/bs'
+import React from 'react'
 
-export default function PostModal() {
+interface IProps {
+  setIsOpenPostModal: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function PostModal({ setIsOpenPostModal }: IProps) {
   return (
     <div className="absolute w-full h-full flex justify-center items-center z-20 bg-black bg-opacity-80">
       <div className="w-[600px] h-[500px] bg-gray-850 p-5 rounded-2xl">
@@ -22,7 +27,10 @@ export default function PostModal() {
             </div>
           </div>
           <div className="flex justify-between items-center mt-28">
-            <button className="w-40 h-10 rounded-full bg-colorButton font-bold text-xl text-gray-50">
+            <button
+              onClick={() => setIsOpenPostModal(false)}
+              className="w-40 h-10 rounded-full bg-colorButton font-bold text-xl text-gray-50"
+            >
               Cancelar
             </button>
             <button className="w-40 h-10 rounded-full bg-secondary font-bold text-xl text-gray-50">

@@ -104,7 +104,7 @@ export default function Signup() {
               className="bg-primary text-green-50 rounded w-60 h-12 hover:bg-secondary font-semibold mt-8 mb-5 py-4"
               type="submit"
             >
-              ENTRAR
+              CRIAR CONTA
             </button>
             <p className="lg:hidden mt-3 mb-5 text-zinc-500">
               Não possue conta?

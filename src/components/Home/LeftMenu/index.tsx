@@ -7,6 +7,7 @@ import {
 } from 'react-icons/bs'
 import Link from 'next/link'
 import LogOut from './components/logout'
+import Buttons from './components/buttons'
 
 export default function LeftSideBar() {
   return (
@@ -25,50 +26,43 @@ export default function LeftSideBar() {
       <div className="mt-8 flex-col justify-between items-center">
         <ul className="flex-col">
           <Link
-            className="flex gap-4 items-center mb-10"
+            className="flex gap-4 items-center rounded-full p-3 mb-8 hover:bg-gray-500"
             href="/dashboard/home"
           >
             <HiHome fontSize={35} color="#cc670a" />
             <h3 className="text-secondary font-bold text-xl">Página inicial</h3>
           </Link>
           <Link
-            className="flex gap-4 items-center mb-10"
+            className="flex gap-4 items-center mb-8 rounded-full p-3 hover:bg-gray-500 "
             href="/dashboard/notifications"
           >
             <FaBell fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Notificações</h3>
           </Link>
           <Link
-            className="flex gap-4 items-center mb-10"
+            className="flex gap-4 items-center mb-8 rounded-full p-3 hover:bg-gray-500"
             href="/dashboard/favorites"
           >
             <BsFillBookmarkFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Favoritos</h3>
           </Link>
           <Link
-            className="flex gap-4 items-center mb-10"
+            className="flex gap-4 items-center mb-8 rounded-full p-3 hover:bg-gray-500"
             href="/dashboard/events"
           >
             <BsFillTicketPerforatedFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Eventos</h3>
           </Link>
           <Link
-            className="flex gap-4 items-center mb-10"
+            className="flex gap-4 items-center mb-8 rounded-full p-3 hover:bg-gray-500"
             href={`/dashboard/profile/1`}
           >
             <BsFillPersonFill fontSize={35} color="#d9d9d9" />
             <h3 className="text-gray-200 font-bold text-xl">Perfil</h3>
           </Link>
         </ul>
-        <div className="flex flex-col justify-center items-center mt-56">
-          <div className="flex flex-col gap-5">
-            <button className="w-60 h-12 bg-secondary p-3 rounded-3xl text-xl font-semibold text-gray-200">
-              Novo Grupo
-            </button>
-            <button className="w-60 h-12 bg-secondary p-3 rounded-3xl text-xl font-semibold text-gray-200">
-              Novo Post
-            </button>
-          </div>
+        <div className="flex flex-col justify-center items-center mt-40">
+          <Buttons />
           <LogOut />
         </div>
       </div>
