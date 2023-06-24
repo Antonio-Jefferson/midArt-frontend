@@ -7,7 +7,7 @@ interface IProps {
 
 export default function CreateGroupModal({ setIsOpenGroupModal }: IProps) {
   return (
-    <div className="absolute w-full h-full flex justify-center items-center z-20 bg-black bg-opacity-80">
+    <div className="absolute w-screen h-screen flex justify-center items-center z-20 bg-black bg-opacity-80 top-0sd">
       <div className="w-[600px] h-[500px] bg-gray-850 p-5 rounded-2xl flex flex-col justify-between">
         <div className="flex flex-col gap-4 justify-center items-center">
           <div className="w-24 h-24 rounded-full bg-slate-200 flex justify-center items-center">

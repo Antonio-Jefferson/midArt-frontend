@@ -1,13 +1,20 @@
 'use client'
 
-import CreateGroupModal from '@/components/modals/CreateGroupModal'
-import PostModal from '@/components/modals/PostModal'
-import { useState } from 'react'
+import React from 'react'
 
-export default function Buttons() {
-  const [isOpenGroupModal, setIsOpenGroupModal] = useState<boolean>(false)
-  const [isOpenPostModal, setIsOpenPostModal] = useState<boolean>(false)
+interface IProps {
+  setIsOpenPostModal: React.Dispatch<React.SetStateAction<boolean>>
+  isOpenPostModal: boolean
+  setIsOpenGroupModal: React.Dispatch<React.SetStateAction<boolean>>
+  isOpenGroupModal: boolean
+}
 
+export default function Buttons({
+  setIsOpenPostModal,
+  isOpenPostModal,
+  setIsOpenGroupModal,
+  isOpenGroupModal,
+}: IProps) {
   return (
     <div className="flex flex-col gap-5">
       <button
@@ -22,16 +29,6 @@ export default function Buttons() {
       >
         Novo Post
       </button>
-      {isOpenGroupModal ? (
-        <CreateGroupModal setIsOpenGroupModal={setIsOpenGroupModal} />
-      ) : (
-        ''
-      )}
-      {isOpenPostModal ? (
-        <PostModal setIsOpenPostModal={setIsOpenPostModal} />
-      ) : (
-        ''
-      )}
     </div>
   )
 }

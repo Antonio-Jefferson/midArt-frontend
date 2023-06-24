@@ -15,6 +15,7 @@ import {
   postFavorite,
   postLiked,
 } from '@/server/homeApi'
+import Link from 'next/link'
 
 export default function CardPost(props: DrawingType) {
   const [isLike, setIsLike] = useState<boolean>(false)
@@ -102,14 +103,17 @@ export default function CardPost(props: DrawingType) {
               alt="user image"
               style={{
                 width: '100%',
+                height: '100%',
                 borderRadius: '50%',
               }}
             />
           </div>
           <div>
-            <h2 className="font-bold text-gray-100 text-xl">
-              {props.username}
-            </h2>
+            <Link href={`/dashboard/profile/${props.user_id}`}>
+              <h2 className="font-bold text-gray-100 text-xl">
+                {props.username}
+              </h2>
+            </Link>
             <p className="font-normal text-base text-gray-200">
               {props.description}
             </p>
@@ -173,6 +177,7 @@ export default function CardPost(props: DrawingType) {
               alt="desenho"
               style={{
                 width: '100%',
+                height: '100%',
                 borderRadius: '6px',
               }}
             />

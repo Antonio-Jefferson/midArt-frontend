@@ -7,7 +7,7 @@ interface IProps {
 
 export default function PostModal({ setIsOpenPostModal }: IProps) {
   return (
-    <div className="absolute w-full h-full flex justify-center items-center z-20 bg-black bg-opacity-80">
+    <div className="absolute w-screen h-screen flex justify-center items-center z-20 bg-black bg-opacity-80 top-0">
       <div className="w-[600px] h-[500px] bg-gray-850 p-5 rounded-2xl">
         <div className="flex gap-3 items-center">
           <div className="w-14 h-14 rounded-full bg-slate-200"></div>

@@ -8,8 +8,21 @@ import {
 import Link from 'next/link'
 import LogOut from './components/logout'
 import Buttons from './components/buttons'
+import React from 'react'
 
-export default function LeftSideBar() {
+interface IProps {
+  setIsOpenPostModal: React.Dispatch<React.SetStateAction<boolean>>
+  isOpenPostModal: boolean
+  setIsOpenGroupModal: React.Dispatch<React.SetStateAction<boolean>>
+  isOpenGroupModal: boolean
+}
+
+export default function LeftSideBar({
+  setIsOpenPostModal,
+  isOpenPostModal,
+  setIsOpenGroupModal,
+  isOpenGroupModal,
+}: IProps) {
   return (
     <div className="hidden w-[400px] flex-col fixed h-screen p-5 left-1 bg-primary 2xl:flex 2xl:left-20">
       <div className="flex items-center">
@@ -62,7 +75,12 @@ export default function LeftSideBar() {
           </Link>
         </ul>
         <div className="flex flex-col justify-center items-center mt-40">
-          <Buttons />
+          <Buttons
+            setIsOpenPostModal={setIsOpenPostModal}
+            isOpenPostModal={isOpenPostModal}
+            isOpenGroupModal={isOpenGroupModal}
+            setIsOpenGroupModal={setIsOpenGroupModal}
+          />
           <LogOut />
         </div>
       </div>
