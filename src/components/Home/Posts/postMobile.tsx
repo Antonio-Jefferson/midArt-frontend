@@ -9,7 +9,7 @@ export default function PostMobile() {
       </div>
       <div className="mb-4">
         <input
-          className="text-gray-100 ml-20 bg-transparent w-full outline-none"
+          className="text-gray-100 ml-20 bg-transparent w-64 outline-none"
           type="text"
           placeholder="digite aqui..."
         />

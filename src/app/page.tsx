@@ -63,11 +63,11 @@ export default function Signin() {
         </div>
       </div>
       <div className="flex flex-col h-screen w-full lg:w-1/2 bg-gray-50 items-center justify-center">
-        <div className="flex flex-col w-3/5 items-center">
+        <div className="flex flex-col lg:w-3/5 w-full justify-center items-center mt-5 px-4">
           <h1 className="text-center font-bold text-secondary text-3xl mb-8">
             FAÇA SEU LOGIN
           </h1>
-          <p className="text-zinc-500 font-light text-lg text-center">
+          <p className="text-zinc-500 font-light text-lg text-center mb-10 lg:w-full lg:p-4">
             Bem-vindo de volta! Insira suas informações de login abaixo para
             acessar sua conta e continuar compartilhando sua arte conosco. Não
             se esqueça de verificar as notificações para ver as novidades da
