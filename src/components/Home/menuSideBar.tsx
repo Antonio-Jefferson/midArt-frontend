@@ -12,21 +12,31 @@ export default function MenuSideBar() {
   return (
     <div className="hidden flex-col justify-between items-center bg-primary fixed left-0 h-screen w-20 p-3 md:flex 2xl:hidden">
       <div className="felx flex-col h-80 gap-80">
-        <Link href={'/dashboard/home'} className="mb-10 mt-8">
-          <HiHome fontSize={35} color="#cc670a" />
-        </Link>
-        <Link href={'/dashboard/notifications'} className="mb-10">
-          <FaBell fontSize={35} color="#d9d9d9" />
-        </Link>
-        <Link href={'/dashboard/favorites'} className="mb-10">
-          <BsFillBookmarkFill fontSize={35} color="#d9d9d9" />
-        </Link>
-        <Link href={'/dashboard/events'} className="mb-10">
-          <BsFillTicketPerforatedFill fontSize={35} color="#d9d9d9" />
-        </Link>
-        <Link href={'/dashboard/profile'} className="mb-10">
-          <BsFillPersonFill fontSize={35} color="#d9d9d9" />
-        </Link>
+        <li className="mb-10">
+          <Link href={'/dashboard/home'}>
+            <HiHome fontSize={35} color="#cc670a" />
+          </Link>
+        </li>
+        <li className="mb-10">
+          <Link href={'/dashboard/notifications'}>
+            <FaBell fontSize={35} color="#d9d9d9" />
+          </Link>
+        </li>
+        <li className="mb-10">
+          <Link href={'/dashboard/favorites'} className="mb-10">
+            <BsFillBookmarkFill fontSize={35} color="#d9d9d9" />
+          </Link>
+        </li>
+        <li className="mb-10">
+          <Link href={'/dashboard/events'} className="mb-10">
+            <BsFillTicketPerforatedFill fontSize={35} color="#d9d9d9" />
+          </Link>
+        </li>
+        <li className="mb-10">
+          <Link href={'/dashboard/profile'} className="mb-10">
+            <BsFillPersonFill fontSize={35} color="#d9d9d9" />
+          </Link>
+        </li>
       </div>
       <div className="flex flex-col items-center gap-20">
         <div className="flex flex-col gap-5">

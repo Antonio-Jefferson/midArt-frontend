@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function MenuMobile() {
   return (
-    <ul className="md:hidden flex justify-between items-center p-4 w-screen h-20 fixed bottom-0 bg-primary border border-t border-gray-200">
+    <ul className="md:hidden flex justify-between items-center p-4 w-screen h-20 fixed bottom-0 bg-primary border-t border-gray-600">
       <Link href={'/dashboard/home'}>
         <HiHome fontSize={28} color="#cc670a" />
       </Link>

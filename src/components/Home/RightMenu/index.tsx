@@ -8,7 +8,7 @@ export default function RightSideBar() {
       <div className="w-80 h-auto relative bg-red z-40">
         <div className="flex gap-1 items-center w-80 h-10 p-2 rounded-3xl relative">
           <input
-            className="w-80 h-10 rounded-3xl pl-2 bg-gray-850 outline-none"
+            className="w-80 h-10 text-gray-100 rounded-3xl pl-2 bg-gray-850 outline-none"
             type="text"
             placeholder="Buscar usuário..."
           />
